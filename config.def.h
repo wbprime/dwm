@@ -2,13 +2,13 @@
 
 /* appearance */
 static const char *fonts[] = {
-    "Inconsolata:size=13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=full:antialias=true:autohint=false",
-    "WenQuanYi Micro Hei Mono:size=13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=full:antialias=true:autohint=false",
+    "Monospace:size=13:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false",
+    "WenQuanYi Micro Hei Mono:size=13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=true:antialias=true:autohint=false",
 };
 /*
 static const char dmenufont[] = "-*-dejavu sans mono-medium-r-*-*-14-*-*-*-*-*-*-*";
-*/
 static const char dmenufont[] = "Inconsolata-13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=full:antialias=true:autohint=false";
+*/
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -33,7 +33,7 @@ static const Rule rules[] = {
 	{ "VBoxSDL",  NULL,       NULL,       1 << 5,       False,       -1 },
 	{ "VirtualBox",  NULL,       NULL,       1 << 5,       False,       -1 },
 	{ "Opera",  NULL,       NULL,       1 << 2,       False,       -1 },
-	{ "Eclipse",  NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "jetbrains-idea-ce",  NULL,       NULL,       1 << 1,       False,       -1 },
 	{ "Surf",  NULL,       NULL,       1 << 3,       False,       -1 },
 };
 
@@ -62,11 +62,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-b", "-p", " [search] ", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", "-e", "tmux", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *operacmd[]  = { "opera", NULL };
-static const char *surfcmd[]  = { "surf", "-M", "cn.bing.com", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -74,7 +73,6 @@ static Key keys[] = {
 	{ MODKEY,             XK_r, spawn,          {.v = termcmd } },
 	{ MODKEY,           XK_x, spawn,          {.v = slockcmd } },
 	{ MODKEY,           XK_o, spawn,          {.v = operacmd } },
-	{ MODKEY,           XK_s, spawn,          {.v = surfcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
