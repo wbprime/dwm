@@ -2,21 +2,21 @@
 
 /* appearance */
 static const char *fonts[] = {
-    "Monospace:size=13:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false",
-    "WenQuanYi Micro Hei Mono:size=13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=true:antialias=true:autohint=false",
+    "Monospace-13:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false",
+    "WenQuanYi Micro Hei Mono-13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=true:antialias=true:autohint=false",
 };
 /*
 static const char dmenufont[] = "-*-dejavu sans mono-medium-r-*-*-14-*-*-*-*-*-*-*";
 static const char dmenufont[] = "Inconsolata-13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=full:antialias=true:autohint=false";
 */
-static const char regfont[] = "Monospace-15";
+static const char regfont[] = "Monospace-13";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#005577";
 static const char selbgcolor[]      = "#005577";
 static const char selfgcolor[]      = "#eeeeee";
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = False;    /* False means bottom bar */
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", regfont, "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", "-f", regfont, NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *operacmd[]  = { "opera", NULL };
