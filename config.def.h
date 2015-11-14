@@ -9,7 +9,8 @@ static const char *fonts[] = {
 static const char dmenufont[] = "-*-dejavu sans mono-medium-r-*-*-14-*-*-*-*-*-*-*";
 static const char dmenufont[] = "Inconsolata-13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=full:antialias=true:autohint=false";
 */
-static const char regfont[] = "Monospace-13";
+static const char dmenufont[] = "Monospace-12";
+static const char cmdfont[] = "Monospace-14";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -18,8 +19,8 @@ static const char selbgcolor[]      = "#005577";
 static const char selfgcolor[]      = "#eeeeee";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const Bool showbar           = True;     /* False means no bar */
-static const Bool topbar            = False;    /* False means bottom bar */
+static const int showbar            = 1;        /* 0 means no bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
@@ -30,18 +31,19 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "VBoxSDL",  NULL,       NULL,       1 << 5,       False,       -1 },
-	{ "VirtualBox",  NULL,       NULL,       1 << 5,       False,       -1 },
-	{ "Opera",  NULL,       NULL,       1 << 2,       False,       -1 },
-	{ "jetbrains-idea-ce",  NULL,       NULL,       1 << 1,       False,       -1 },
-	{ "Surf",  NULL,       NULL,       1 << 3,       False,       -1 },
+	{ "Gimp"              , NULL , NULL , 0      ,       1 ,          -1 } ,
+	{ "VBoxSDL"           , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
+	{ "VirtualBox"        , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
+	{ "Opera"             , NULL , NULL , 1 << 2 ,       0 ,          -1 } ,
+	{ "jetbrains-idea-ce" , NULL , NULL , 1 << 1 ,       0 ,          -1 } ,
+	{ "Surf"              , NULL , NULL , 1 << 3 ,       0 ,          -1 } ,
+	{ "Firefox"           , NULL , NULL , 1 << 8 ,       0 ,          -1 } ,
 };
 
 /* layout(s) */
-static const float mfact      = 0.5; /* factor of master area size [0.05..0.95] */
-static const int nmaster      = 1;    /* number of clients in master area */
-static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const int nmaster     = 1;    /* number of clients in master area */
+static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -63,8 +65,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", regfont, "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", "-f", regfont, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *termcmd[]  = { "st", "-f", cmdfont, NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *operacmd[]  = { "opera", NULL };
 
