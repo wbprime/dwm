@@ -37,7 +37,7 @@ static const Rule rules[] = {
 	{ "Opera"             , NULL , NULL , 1 << 2 ,       0 ,          -1 } ,
 	{ "jetbrains-idea-ce" , NULL , NULL , 1 << 1 ,       0 ,          -1 } ,
 	{ "Surf"              , NULL , NULL , 1 << 3 ,       0 ,          -1 } ,
-	{ "Firefox"           , NULL , NULL , 1 << 8 ,       0 ,          -1 } ,
+	{ "Firefox"           , NULL , NULL , 1      ,       0 ,          -1 } ,
 };
 
 /* layout(s) */
@@ -66,7 +66,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", "-f", cmdfont, NULL };
+static const char *termcmd[]  = { "st", "-f", cmdfont, "-e", "/usr/bin/fish", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *operacmd[]  = { "opera", NULL };
 
