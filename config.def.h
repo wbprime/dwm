@@ -34,6 +34,7 @@ static const Rule rules[] = {
 	{ "Gimp"              , NULL , NULL , 0      ,       1 ,          -1 } ,
 	{ "VBoxSDL"           , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
 	{ "VirtualBox"        , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
+	{ "rdesktop"          , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
 	{ "Opera"             , NULL , NULL , 1 << 2 ,       0 ,          -1 } ,
 	{ "jetbrains-idea-ce" , NULL , NULL , 1 << 1 ,       0 ,          -1 } ,
 	{ "Surf"              , NULL , NULL , 1 << 3 ,       0 ,          -1 } ,
