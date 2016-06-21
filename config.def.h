@@ -3,14 +3,12 @@
 /* appearance */
 static const char *fonts[] = {
     "Monospace-13:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false",
-    "WenQuanYi Micro Hei Mono-13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=true:antialias=true:autohint=false",
+    "Source Han Sans-13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=true:antialias=true:autohint=false",
 };
 /*
 static const char dmenufont[] = "-*-dejavu sans mono-medium-r-*-*-14-*-*-*-*-*-*-*";
 static const char dmenufont[] = "Inconsolata-13:lcdfilter=lcddefault:hintstyle=hintfull:hinting=full:antialias=true:autohint=false";
 */
-static const char dmenufont[] = "Monospace-12";
-static const char cmdfont[] = "Monospace-14";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -66,8 +64,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", "-f", cmdfont, "-e", "/usr/bin/fish", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", fonts, "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *termcmd[]  = { "st", "-f", fonts, "-e", "/usr/bin/fish", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *operacmd[]  = { "opera", "--proxy-pac-url=http://cross-gwf.58ganji-corp.com", NULL };
 
