@@ -28,15 +28,16 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp"              , NULL , NULL , 0      ,       1 ,          -1 } ,
-	{ "VBoxSDL"           , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
-	{ "VirtualBox"        , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
-	{ "rdesktop"          , NULL , NULL , 1 << 5 ,       0 ,          -1 } ,
-	{ "Opera"             , NULL , NULL , 1 << 2 ,       0 ,          -1 } ,
-	{ "jetbrains-idea-ce" , NULL , NULL , 1 << 1 ,       0 ,          -1 } ,
-	{ "Surf"              , NULL , NULL , 1 << 3 ,       0 ,          -1 } ,
-	{ "Firefox"           , NULL , NULL , 1      ,       0 ,          -1 } ,
+	/* class      instance    title       tags mask     isfloating   isterminal noswallow monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           0,         0,        -1 },
+	{ "VBoxSDL"           , NULL , NULL , 1 << 5 ,       0 ,   0, 0,       -1 } ,
+	{ "VirtualBox"        , NULL , NULL , 1 << 5 ,       0 ,   0, 0,       -1 } ,
+	{ "rdesktop"          , NULL , NULL , 1 << 5 ,       0 ,   0, 0,       -1 } ,
+	{ "Opera"             , NULL , NULL , 1 << 2 ,       0 ,   0, 0,       -1 } ,
+	{ "jetbrains-idea-ce" , NULL , NULL , 1 << 1 ,       0 ,   0, 0,       -1 } ,
+	{ "Surf"              , NULL , NULL , 1 << 3 ,       0 ,   0, 0,       -1 } ,
+	{ "Firefox"           , NULL , NULL , 1      ,       0 ,   0, 0,       -1 } ,
+	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
 };
 
 /* layout(s) */
