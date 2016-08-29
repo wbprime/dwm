@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	{ "Surf"              , NULL , NULL , 1 << 3 , 0 , 0 , 0 , -1 } ,
 	{ "Firefox"           , NULL , NULL , 1      , 0 , 0 , 0 , -1 } ,
 	{ "st"                , NULL , NULL , 0      , 0 , 1 , 1 , -1 } ,
-	{ "vim"               , NULL , NULL , 1 << 3 , 0 , 0 , 0 , -1 } ,
+	{ NULL                , NULL , "vim", 1 << 3 , 0 , 0 , 0 , -1 } ,
 };
 
 /* layout(s) */
