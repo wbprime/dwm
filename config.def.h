@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
     "Monospace-13:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false"
 };
@@ -28,18 +28,19 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   isterminal noswallow monitor */
-	{ "Gimp"               , NULL , NULL  , 0      , 1 , 0 , 0 , -1 } ,
-	{ "VBoxSDL"            , NULL , NULL  , 1 << 5 , 0 , 0 , 0 , -1 } ,
-	{ "VirtualBox"         , NULL , NULL  , 1 << 5 , 0 , 0 , 0 , -1 } ,
-	{ "rdesktop"           , NULL , NULL  , 1 << 5 , 0 , 0 , 0 , -1 } ,
-	{ "Opera"              , NULL , NULL  , 1 << 2 , 0 , 0 , 0 , -1 } ,
-	{ "jetbrains-idea-ce"  , NULL , NULL  , 1 << 1 , 0 , 0 , 0 , -1 } ,
-	{ "Surf"               , NULL , NULL  , 1 << 3 , 0 , 0 , 0 , -1 } ,
-	{ "Firefox"            , NULL , NULL  , 1      , 0 , 0 , 0 , -1 } ,
-	{ "st"                 , NULL , NULL  , 0      , 0 , 1 , 1 , -1 } ,
-	{ "qemu-system-x86_64" , NULL , NULL  , 1 << 5 , 1 , 0 , 0 , -1 } ,
-	{ NULL                 , NULL , "vim" , 1 << 3 , 0 , 0 , 0 , -1 } ,
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Gimp"               , NULL , NULL  , 0      , 1 , -1 } ,
+	{ "Firefox"            , NULL , NULL  , 1 << 8 , 0 , -1 } ,
+	{ "VBoxSDL"            , NULL , NULL  , 1 << 5 , 0 , -1 } ,
+	{ "VirtualBox"         , NULL , NULL  , 1 << 5 , 0 , -1 } ,
+	{ "rdesktop"           , NULL , NULL  , 1 << 5 , 0 , -1 } ,
+	{ "Opera"              , NULL , NULL  , 1 << 2 , 0 , -1 } ,
+	{ "jetbrains-idea-ce"  , NULL , NULL  , 1 << 1 , 0 , -1 } ,
+	{ "Surf"               , NULL , NULL  , 1 << 3 , 0 , -1 } ,
+	{ "Firefox"            , NULL , NULL  , 1      , 0 , -1 } ,
+	{ "st"                 , NULL , NULL  , 0      , 0 , -1 } ,
+	{ "qemu-system-x86_64" , NULL , NULL  , 1 << 5 , 1 , -1 } ,
+	{ NULL                 , NULL , "vim" , 1 << 3 , 0 , -1 } ,
 };
 
 /* layout(s) */
@@ -52,8 +53,6 @@ static const Layout layouts[] = {
 	{ "[=]",      tile },    /* first entry is default */
 	{ "[!]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "TTT",      bstack },
-	{ "===",      bstackhoriz },
 };
 
 /* key definitions */
@@ -65,7 +64,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/bash", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -93,8 +92,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
