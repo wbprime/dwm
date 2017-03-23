@@ -73,7 +73,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-p", "Launch:", "-m", dmenumon, "-fn", monofonts, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", "-f", monofonts, "-e", "/bin/zsh", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
+static const char *operacmd[]  = { "vivaldi", "--proxy-server=10.9.21.246:8888", NULL };
+/*
 static const char *operacmd[]  = { "vivaldi", "--proxy-pac-url=http://cross-gwf.58ganji-corp.com", NULL };
+*/
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
