@@ -6,9 +6,9 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = {
-    "Monospace-13:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false"
+    "Monospace:size=12:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false"
 };
-static const char monofonts[] = "Monospace-13:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false";
+static const char monofonts[] = "Monospace:size=12:lcdfilter=lcddefault:hintstyle=hintslight:hinting=true:antialias=true:autohint=false";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -81,9 +81,9 @@ static const char *operacmd[]  = { "vivaldi", "--proxy-pac-url=http://cross-gwf.
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,             XK_r, spawn,          {.v = termcmd } },
-	{ MODKEY,           XK_x, spawn,          {.v = slockcmd } },
-	{ MODKEY,           XK_o, spawn,          {.v = operacmd } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = slockcmd } },
+	{ MODKEY,                       XK_o,      spawn,          {.v = operacmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
