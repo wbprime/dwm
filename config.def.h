@@ -30,7 +30,6 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp"               , NULL , NULL  , 0      , 1 , -1 } ,
-	{ "Firefox"            , NULL , NULL  , 1 << 8 , 0 , -1 } ,
 	{ "VBoxSDL"            , NULL , NULL  , 1 << 5 , 0 , -1 } ,
 	{ "VirtualBox"         , NULL , NULL  , 1 << 5 , 0 , -1 } ,
 	{ "rdesktop"           , NULL , NULL  , 1 << 5 , 0 , -1 } ,
@@ -39,7 +38,7 @@ static const Rule rules[] = {
 	{ "Vivaldi-stable"     , NULL , NULL  , 1 << 2 , 0 , -1 } ,
 	{ "jetbrains-idea-ce"  , NULL , NULL  , 1 << 1 , 0 , -1 } ,
 	{ "Surf"               , NULL , NULL  , 1 << 3 , 0 , -1 } ,
-	{ "Firefox"            , NULL , NULL  , 1      , 0 , -1 } ,
+	{ "Firefox"            , NULL , NULL  , 1 << 3 , 0 , -1 } ,
 	{ "st"                 , NULL , NULL  , 0      , 0 , -1 } ,
 	{ "qemu-system-x86_64" , NULL , NULL  , 1 << 5 , 1 , -1 } ,
 	{ NULL                 , NULL , "vim" , 1 << 3 , 0 , -1 } ,
