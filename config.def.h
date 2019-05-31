@@ -31,7 +31,9 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp"               , NULL , NULL  , 0      , 1 , -1 } ,
 	{ "VBoxSDL"            , NULL , NULL  , 1 << 5 , 0 , -1 } ,
-	{ "VirtualBox"         , NULL , NULL  , 1 << 5 , 0 , -1 } ,
+	{ "VirtualBox"         , NULL , NULL  , 1 << 4 , 0 , -1 } ,
+	{ "qemu-system-x86_64" , NULL , NULL  , 1 << 5 , 0 , -1 } ,
+	{ "qemu-system-i386"   , NULL , NULL  , 1 << 4 , 0 , -1 } ,
 	{ "rdesktop"           , NULL , NULL  , 1 << 5 , 0 , -1 } ,
 	{ "Opera"              , NULL , NULL  , 1 << 2 , 0 , -1 } ,
 	{ "vivaldi-stable"     , NULL , NULL  , 1 << 2 , 0 , -1 } ,
@@ -40,7 +42,6 @@ static const Rule rules[] = {
 	{ "Surf"               , NULL , NULL  , 1 << 3 , 0 , -1 } ,
 	{ "Firefox"            , NULL , NULL  , 1 << 3 , 0 , -1 } ,
 	{ "st"                 , NULL , NULL  , 0      , 0 , -1 } ,
-	{ "qemu-system-x86_64" , NULL , NULL  , 1 << 5 , 1 , -1 } ,
 	{ NULL                 , NULL , "vim" , 1 << 3 , 0 , -1 } ,
 };
 
