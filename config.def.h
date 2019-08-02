@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	{ "jetbrains-idea-ce"  , NULL , NULL  , 1 << 1 , 0 , -1 } ,
 	{ "Surf"               , NULL , NULL  , 1 << 3 , 0 , -1 } ,
 	{ "Firefox"            , NULL , NULL  , 1 << 3 , 0 , -1 } ,
+	{ "firefox"            , NULL , NULL  , 1 << 3 , 0 , -1 } ,
 	{ "st"                 , NULL , NULL  , 0      , 0 , -1 } ,
 	{ NULL                 , NULL , "vim" , 1 << 3 , 0 , -1 } ,
 };
